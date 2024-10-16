@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const movieList = document.getElementById("movies");
 
   // Hàm lấy dữ liệu từ API
+  //                                    WAY 1
   // async function fetchMovies(page) {
   //     const url = `https://phim.nguonc.com/api/films/phim-moi-cap-nhat?page=${page}`;
   //     try {
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //         return [];
   //     }
   // }
+  //                                      WAY 2
   async function fetchMovies(page) {
     const url = `https://phim.nguonc.com/api/films/phim-moi-cap-nhat?page=${page}`;
     try {
@@ -54,12 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
     //     return;
     // }
 
+    // Load title
     movies.forEach((movie) => {
       const li = document.createElement("li");
       li.textContent = movie.title;
       movieList.appendChild(li);
     });
 
+    // Load Image
     // movies.forEach(movie => {
     //     const li = document.createElement('li');
     //     const img = document.createElement('img');
